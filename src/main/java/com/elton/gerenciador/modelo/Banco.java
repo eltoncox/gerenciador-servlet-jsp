@@ -10,7 +10,7 @@ public class Banco {
 	private static List<Usuario> listaUsuarios = new ArrayList<>();
 	private static Integer chaveSequencial = 1;
 	
-	static { // bloco inicial
+	static {
 		Empresa empresa = new Empresa();
 		empresa.setId(chaveSequencial++);
 		empresa.setNome("Alura");
@@ -22,11 +22,10 @@ public class Banco {
 		
 		Usuario u1 = new Usuario();
 		u1.setLogin("elton");
-		u1.setSenha("0107");
-		
+		u1.setSenha("01077");
 		Usuario u2 = new Usuario();
 		u2.setLogin("renata");
-		u2.setSenha("0161");
+		u2.setSenha("12345");
 		
 		listaUsuarios.add(u1);
 		listaUsuarios.add(u2);
@@ -63,6 +62,13 @@ public class Banco {
 		return null;
 	}
 
-	
-	//busca usuario
+	public Usuario existeUsuario(String login, String senha) {
+		for(Usuario usuario : listaUsuarios) {
+			if(usuario.ehIgual(login, senha)) {
+				return usuario;
+			}
+		}
+		return null;
+	}
+
 }

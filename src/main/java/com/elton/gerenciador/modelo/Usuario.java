@@ -21,9 +21,7 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public boolean ehIgual(String login, String senha) 
-	{
-		
+	public boolean ehIgual(String login, String senha) {
 		if(!this.login.equals(login)) {
 			return false;
 		}

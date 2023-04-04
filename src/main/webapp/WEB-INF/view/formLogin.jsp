@@ -9,15 +9,15 @@
 </head>
 <body>
 
-    <form action="${linkEntradaServlet }" method="post">
-
-        Login: <input type="text" name="Login"  />
-        Senha: <input type="passwaord" name="senha"  />
-
-        <input type="hidden" name="acao" value="Login" /> 
-
-        <input type="submit" />
-    </form>
+	<form action="${linkEntradaServlet }" method="post">
+	
+		Login: <input type="text" name="login"  />
+		Senha: <input type="password" name="senha"  />
+		
+		<input type="hidden" name="acao" value="Login">
+	
+		<input type="submit" />
+	</form>
 
 </body>
 </html>

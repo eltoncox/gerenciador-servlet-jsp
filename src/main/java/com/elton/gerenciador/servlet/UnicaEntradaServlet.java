@@ -1,5 +1,6 @@
 package com.elton.gerenciador.servlet;
 
+
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -25,16 +26,16 @@ public class UnicaEntradaServlet extends HttpServlet {
 		
 		String nome;
 		try {
-			Class classe = Class.forName(nomeDaClasse);// carrega a classe com o nome da String
-			Acao acao = (Acao) classe.newInstance(); 		
-			nome = acao.executa(request, response);
-		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {			
+			Class classe = Class.forName(nomeDaClasse);//carrega a classe com o nome 
+			Acao acao = (Acao) classe.newInstance();
+			nome = acao.executa(request,response);
+		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
 			throw new ServletException(e);
 		}
 		
 		String[] tipoEEndereco = nome.split(":");
 		if(tipoEEndereco[0].equals("forward")) {
-			RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/view/"+tipoEEndereco[1]);
+			RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/view/" + tipoEEndereco[1]);
 			rd.forward(request, response);
 		} else {
 			response.sendRedirect(tipoEEndereco[1]);
