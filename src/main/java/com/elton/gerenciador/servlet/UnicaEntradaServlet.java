@@ -14,25 +14,23 @@ import javax.servlet.http.HttpSession;
 import com.elton.gerenciador.acao.Acao;
 // implementação de um padrão de controller
 
-@WebServlet("/entrada")
+//@WebServlet("/entrada")
 public class UnicaEntradaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) 
 												throws ServletException, IOException {
 		
-		String paramAcao = request.getParameter("acao");
+		String paramAcao = request.getParameter("acao");		
 		
-		
-		
-		HttpSession sessao = request.getSession();
-		boolean usuarioNaoEstaLogado = (sessao.getAttribute("usuarioLogado") == null);
-		boolean ehUmAcaoProtegida = !(paramAcao.equals("Login") || paramAcao.equals("LoginForm"));
-		
-		if(ehUmAcaoProtegida && usuarioNaoEstaLogado) {
-			response.sendRedirect("entrada?acao=LoginForm");
-			return; 
-		} 
+//		HttpSession sessao = request.getSession();
+//		boolean usuarioNaoEstaLogado = (sessao.getAttribute("usuarioLogado") == null);
+//		boolean ehUmAcaoProtegida = !(paramAcao.equals("Login") || paramAcao.equals("LoginForm"));
+//		
+//		if(ehUmAcaoProtegida && usuarioNaoEstaLogado) {
+//			response.sendRedirect("entrada?acao=LoginForm");
+//			return; 
+//		} 
 	
 		
 		
